@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practice</string>
+    <string name="katongxiaodongwu_07">老虎</string>
+    <string name="katongxiaodongwu_08">斑马</string>
+    <string name="katongxiaodongwu_09">鸟</string>
+    <string name="katongxiaodongwu_07s">吃肉</string>
+    <string name="katongxiaodongwu_08s">吃草</string>
+    <string name="katongxiaodongwu_09s">吃虫</string>
+</resources>

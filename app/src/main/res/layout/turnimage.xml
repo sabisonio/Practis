@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/buttonTurnImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="left|bottom">
+
+        <Button
+        android:text="向左转"
+        android:id="@+id/turnLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        </Button>
+
+
+        <Button
+            android:text="向右转"
+            android:id="@+id/turnRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/imageViewTurnImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/TurnImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</FrameLayout>

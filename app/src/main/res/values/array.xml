@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="msa">
+        <item>哈哈</item>
+        <item>呵呵</item>
+        <item>呃呃</item>
+        <item>恩恩</item>
+    </string-array>
+</resources>

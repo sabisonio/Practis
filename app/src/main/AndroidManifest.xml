@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sonio.practice">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainMenuPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ContactsTable"></activity>
+        <activity android:name=".Spiner"></activity>
+        <activity android:name=".SpinnerAddItem"></activity>
+        <activity android:name=".ChangeImageSize"></activity>
+        <activity android:name=".TurnImage"></activity>
+        <activity android:name=".GalleryList"></activity>\
+        <activity android:name=".AlertTips"></activity>
+        <activity android:name=".AlertDialogPage"></activity>
+        <activity android:name=".MultiChoicesPage"></activity>
+        <activity android:name=".CalendarPage"></activity>
+        <activity android:name=".ClockPage"></activity>
+        <activity android:name=".ListActivityPage"></activity>
+        <activity android:name=".ListActivitySecondPage">
+
+            <intent-filter>
+                <action android:name="android.intent.action.second"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".WebViewPage"></activity>
+        <activity android:name=".TabPage"></activity>
+        <activity android:name=".MoveButton"></activity>
+        <activity android:name=".NoNetTips"></activity>
+        <activity android:name=".LogInPage"></activity>
+    </application>
+
+</manifest>
