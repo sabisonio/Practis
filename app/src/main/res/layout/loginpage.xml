@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    >
 
     <RelativeLayout
         android:id="@+id/login_layout"
@@ -27,7 +28,8 @@
                 android:inputType="number"
                 android:paddingRight="60dp"
                 android:maxLength="20"
-                android:paddingLeft="55dp"/>
+                android:paddingLeft="55dp"
+                android:hint="请输入账号"/>
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="21dp"
@@ -74,7 +76,8 @@
                 android:inputType="textPassword"
                 android:paddingRight="60dp"
                 android:maxLength="20"
-                android:paddingLeft="55dp"/>
+                android:paddingLeft="55dp"
+                android:hint="请输入密码"/>
 
             <ImageView
                 android:layout_width="24dp"
@@ -85,6 +88,14 @@
                 android:background="@drawable/katongxiaodongwu_18"
                 />
 
+           <Button
+                android:id="@+id/bt_pwd_eye"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:background="@drawable/info_round"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"/>
+
             <Button
                 android:id="@+id/passwordClear"
                 android:layout_width="23dp"
@@ -93,6 +104,7 @@
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="33dp"
                 android:visibility="invisible"/>
+
         </FrameLayout>
         <Button
             android:id="@+id/login"
@@ -141,7 +153,7 @@
          android:background="#00000000"
          android:gravity="center"
          android:maxLines="1"
-         android:text="blabalabalablaba"
+         android:text="Contanct us"
          android:textSize="16sp"
          android:visibility="visible"/>
     </RelativeLayout>
