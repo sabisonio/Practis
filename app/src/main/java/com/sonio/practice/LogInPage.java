@@ -12,7 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.sonio.practice.UTL.Code;
+
 
 /**
  * Created by admin on 2017/1/7.
@@ -27,6 +31,8 @@ public class LogInPage extends Activity implements View.OnClickListener {
     private TextWatcher username_watcher;
     private TextWatcher password_watcher;
     boolean eyeOpen=false;
+    private ImageView imageView;
+    private String realCode;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
@@ -44,6 +50,10 @@ public class LogInPage extends Activity implements View.OnClickListener {
         passwordClear.setOnClickListener(this);
         ButtonListerner b = new ButtonListerner();
         bt_pwd_eye.setOnTouchListener(b);
+        imageView=(ImageView)findViewById(R.id.iv_showcode);
+        imageView.setImageBitmap(Code.getInstance().createBitmap());
+        realCode=Code.getInstance().getCode();
+        imageView.setOnClickListener(this);
     }
 
 
@@ -135,6 +145,12 @@ public class LogInPage extends Activity implements View.OnClickListener {
                     eyeOpen=true;
                 }
                 break;*/
+            case R.id.iv_showcode:
+                imageView.setImageBitmap(Code.getInstance().createBitmap());
+                //realCode=Code.getInstance().getCode();
+                break;
+
+
 
         }
     }
