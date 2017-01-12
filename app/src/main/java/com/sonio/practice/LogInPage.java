@@ -36,7 +36,7 @@ public class LogInPage extends Activity implements View.OnClickListener {
                 }
 
                 else if (inputText.equals("123")||pwdInputText.equals("123")){
-                    Toast.makeText(LogInPage.this,"成功！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LogInPage.this,"成功！！",Toast.LENGTH_SHORT).show();
                 }
                 break;
 
