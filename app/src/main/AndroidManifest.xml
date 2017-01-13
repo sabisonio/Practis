@@ -38,6 +38,7 @@
         <activity android:name=".MoveButton"></activity>
         <activity android:name=".NoNetTips"></activity>
         <activity android:name=".MainMenuPage"></activity>
+        <activity android:name=".Register_page"></activity>
     </application>
 
 </manifest>

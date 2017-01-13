@@ -1,6 +1,7 @@
 package com.sonio.practice;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
@@ -33,6 +34,7 @@ public class LogInPage extends Activity implements View.OnClickListener {
     boolean eyeOpen=false;
     private ImageView imageView;
     private String realCode;
+    private Button register;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
@@ -54,6 +56,9 @@ public class LogInPage extends Activity implements View.OnClickListener {
         imageView.setImageBitmap(Code.getInstance().createBitmap());
         realCode=Code.getInstance().getCode();
         imageView.setOnClickListener(this);
+        register=(Button)findViewById(R.id.register);
+        register.setOnClickListener(this);
+
     }
 
 
@@ -150,7 +155,10 @@ public class LogInPage extends Activity implements View.OnClickListener {
                 //realCode=Code.getInstance().getCode();
                 break;
 
-
+            case R.id.register:
+                Intent registerIntent =new Intent();
+                registerIntent.setClass(LogInPage.this,Register_page.class);
+                startActivity(registerIntent);
 
         }
     }
