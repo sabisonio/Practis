@@ -35,6 +35,8 @@ public class LogInPage extends Activity implements View.OnClickListener {
     private ImageView imageView;
     private String realCode;
     private Button register;
+    private EditText codeEdit;
+
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
@@ -58,7 +60,7 @@ public class LogInPage extends Activity implements View.OnClickListener {
         imageView.setOnClickListener(this);
         register=(Button)findViewById(R.id.register);
         register.setOnClickListener(this);
-
+        codeEdit=(EditText)findViewById(R.id.codeEdit);
     }
 
 
@@ -118,16 +120,19 @@ public class LogInPage extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+
+
             case R.id.login:
                 String inputText=editText.getText().toString();
                 String pwdInputText=pwdText.getText().toString();
+                String codeEditText=codeEdit.getText().toString();
                 if (inputText.equals("")||pwdInputText.equals(""))
                 {
                     Toast.makeText(LogInPage.this,"请输入账号密码！",Toast.LENGTH_SHORT).show();
                 }
 
-                else if (inputText.equals("123")||pwdInputText.equals("123")){
-                    Toast.makeText(LogInPage.this,"成功！！",Toast.LENGTH_SHORT).show();
+                else if (inputText.equals("123")&& pwdInputText.equals("123") && codeEditText.equals(realCode) ){
+                    Toast.makeText(LogInPage.this,realCode,Toast.LENGTH_SHORT).show();
                 }
                 break;
 
@@ -150,15 +155,20 @@ public class LogInPage extends Activity implements View.OnClickListener {
                     eyeOpen=true;
                 }
                 break;*/
+
             case R.id.iv_showcode:
                 imageView.setImageBitmap(Code.getInstance().createBitmap());
                 //realCode=Code.getInstance().getCode();
+                realCode=Code.getInstance().getCode();
+
                 break;
+
 
             case R.id.register:
                 Intent registerIntent =new Intent();
                 registerIntent.setClass(LogInPage.this,Register_page.class);
                 startActivity(registerIntent);
+                break;
 
         }
     }
