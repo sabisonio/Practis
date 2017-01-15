@@ -2,7 +2,9 @@ package com.sonio.practice;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -36,10 +38,11 @@ public class LogInPage extends Activity implements View.OnClickListener {
     private String realCode;
     private Button register;
     private EditText codeEdit;
-
+    private SharedPreferences pref;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
         Button bt_login=(Button)findViewById(R.id.login);
         editText=(EditText)findViewById(R.id.accountText);
         pwdText=(EditText)findViewById(R.id.passwordEdit);
