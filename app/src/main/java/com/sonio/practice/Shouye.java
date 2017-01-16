@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 /**
  * Created by sonio on 2017/1/16.
@@ -14,6 +15,7 @@ import android.widget.Spinner;
 public class Shouye extends Activity{
     private Spinner spinner2;
     private ArrayAdapter adapter2;
+    private TextView selectedItem;
     protected  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shouye);
@@ -25,11 +27,13 @@ public class Shouye extends Activity{
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(new SpinnerXMLSelectedListener());
         spinner2.setVisibility(View.VISIBLE);
+        selectedItem=(TextView)findViewById(R.id.selectedItem);
     }
     class SpinnerXMLSelectedListener implements AdapterView.OnItemSelectedListener{
         public void onItemSelected(AdapterView<?> arg0,View arg1,int arg2,long arg3){
-
+            selectedItem.setText(""+adapter2.getItem(arg2));
         }
-        public void onNothingSelected(AdapterView<?> argg0){}
+        public void onNothingSelected(AdapterView<?> arg0){}
+
     }
 }
