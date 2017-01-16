@@ -13,6 +13,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,13 +40,17 @@ public class LogInPage extends Activity implements View.OnClickListener {
     private Button register;
     private EditText codeEdit;
     private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
+    private CheckBox remember_pass;
+    private Button loginError;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
         pref = PreferenceManager.getDefaultSharedPreferences(this);
+        remember_pass=(CheckBox)findViewById(R.id.remember_pass);//是否记住密码
         Button bt_login=(Button)findViewById(R.id.login);
-        editText=(EditText)findViewById(R.id.accountText);
-        pwdText=(EditText)findViewById(R.id.passwordEdit);
+        editText=(EditText)findViewById(R.id.accountText);//账号信息
+        pwdText=(EditText)findViewById(R.id.passwordEdit);//密码信息
         accountCancle=(Button)findViewById(R.id.accountCancle);
         passwordClear=(Button)findViewById(R.id.passwordClear);
         bt_pwd_eye=(Button)findViewById(R.id.bt_pwd_eye);
@@ -59,11 +64,22 @@ public class LogInPage extends Activity implements View.OnClickListener {
         bt_pwd_eye.setOnTouchListener(b);
         imageView=(ImageView)findViewById(R.id.iv_showcode);
         imageView.setImageBitmap(Code.getInstance().createBitmap());
+        loginError=(Button)findViewById(R.id.loginError);
+        loginError.setOnClickListener(this);
         realCode=Code.getInstance().getCode();
         imageView.setOnClickListener(this);
         register=(Button)findViewById(R.id.register);
         register.setOnClickListener(this);
         codeEdit=(EditText)findViewById(R.id.codeEdit);
+        boolean isRemember=pref.getBoolean("remember_password",false);
+        if (isRemember){
+            //将账号密码设置到文本中
+            String account=pref.getString("editText","");
+            String password=pref.getString("pwdText","");
+            editText.setText(account);
+            pwdText.setText(password);
+            remember_pass.setChecked(true);
+        }
     }
 
 
@@ -136,7 +152,23 @@ public class LogInPage extends Activity implements View.OnClickListener {
 
                 else if (inputText.equals("123")&& pwdInputText.equals("123") && codeEditText.equals(realCode) ){
                     Toast.makeText(LogInPage.this,realCode,Toast.LENGTH_SHORT).show();
+                    Intent shouyeIntent =new Intent();
+                    shouyeIntent.setClass(LogInPage.this,Shouye.class);
+                    startActivity(shouyeIntent);
+                    finish();
+                    editor = pref.edit();
+                    if (remember_pass.isChecked()){
+                        editor.putBoolean("remember_password",true);
+                        editor.putString("account",inputText);
+                        editor.putString("password",pwdInputText);
+                    }
+                    else{
+                        editor.clear();
+                    }
                 }
+                else break;
+
+                editor.commit();
                 break;
 
                  default:break;
@@ -171,6 +203,12 @@ public class LogInPage extends Activity implements View.OnClickListener {
                 Intent registerIntent =new Intent();
                 registerIntent.setClass(LogInPage.this,Register_page.class);
                 startActivity(registerIntent);
+                break;
+
+            case R.id.loginError:
+                SharedPreferences.Editor editor1 =getSharedPreferences("data",MODE_PRIVATE).edit();
+                editor1.putString("name","name");
+                editor1.commit();
                 break;
 
         }

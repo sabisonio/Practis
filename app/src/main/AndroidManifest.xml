@@ -39,6 +39,7 @@
         <activity android:name=".NoNetTips"></activity>
         <activity android:name=".MainMenuPage"></activity>
         <activity android:name=".Register_page"></activity>
+        <activity android:name=".Shouye"></activity>
     </application>
 
 </manifest>
