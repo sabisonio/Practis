@@ -18,6 +18,7 @@ public class Shouye extends Activity{
     private TextView selectedItem;
     protected  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        ///动态加载布局http://blog.csdn.net/guolin_blog/article/details/12921889
         setContentView(R.layout.shouye);
         spinner2 = (Spinner)findViewById(R.id.titleDropdownList);
         //https://www.oschina.net/question/54100_33274
@@ -28,6 +29,7 @@ public class Shouye extends Activity{
         spinner2.setOnItemSelectedListener(new SpinnerXMLSelectedListener());
         spinner2.setVisibility(View.VISIBLE);
         selectedItem=(TextView)findViewById(R.id.selectedItem);
+
     }
     class SpinnerXMLSelectedListener implements AdapterView.OnItemSelectedListener{
         public void onItemSelected(AdapterView<?> arg0,View arg1,int arg2,long arg3){
