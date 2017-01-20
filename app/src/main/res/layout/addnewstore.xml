@@ -8,7 +8,18 @@
         android:layout_width="50dp"
         android:layout_height="30dp" />
     <Spinner
+        android:id="@+id/spin_province"
         android:layout_width="50dp"
         android:layout_height="30dp"></Spinner>
+
+    <Spinner
+        android:id="@+id/spin_city"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"></Spinner>
+
+    <Spinner
+        android:id="@+id/spin_county"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"></Spinner>
 
 </LinearLayout>
