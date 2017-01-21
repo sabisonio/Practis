@@ -2,6 +2,8 @@ package com.sonio.practice;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -44,5 +46,52 @@ public class AddNewStore extends Activity {
     * */
     private  void setSpinner(){
 
+        provinceSpinner=(Spinner)findViewById(R.id.spin_province);
+        citySpinner=(Spinner)findViewById(R.id.spin_city);
+        countySpinner=(Spinner)findViewById(R.id.spin_county);
+        ///绑定适配器
+        provinceAdapter=new ArrayAdapter<String>(AddNewStore.this,android.R.layout.simple_spinner_item,province);
+        provinceSpinner.setAdapter(provinceAdapter);
+        provinceSpinner.setSelection(3,true);//设置默认选中项，此处默认选中第四个值
+
+        cityAdapter=new ArrayAdapter<String>(AddNewStore.this,android.R.layout.simple_spinner_item,city[3]);
+        citySpinner.setAdapter(cityAdapter);
+        citySpinner.setSelection(0,true);
+
+        countyAdapter=new ArrayAdapter<String>(AddNewStore.this,android.R.layout.simple_spinner_item,county[3][0]);
+        countySpinner.setAdapter(cityAdapter);
+        citySpinner.setSelection(0,true);
+
+        /////省级下拉改变值
+        provinceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ///下拉选择完成后，传值给市级
+                cityAdapter = new ArrayAdapter<String>(AddNewStore.this,android.R.layout.simple_spinner_item,city[position]);
+                citySpinner.setAdapter(cityAdapter);
+                ////保留选择省级数据
+                provincePosition = position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        ///市级下拉改变值
+
+        citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                countyAdapter=new ArrayAdapter<String>(AddNewStore.this,android.R.layout.simple_spinner_item,county[provincePosition][position]);
+                countySpinner.setAdapter(countyAdapter);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 }
