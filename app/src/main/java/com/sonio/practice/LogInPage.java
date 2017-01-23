@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.sonio.practice.UTL.Code;
+import com.sonio.practice.UTL.MyDatabaseHelper;
 
 
 /**
@@ -43,6 +44,7 @@ public class LogInPage extends Activity implements View.OnClickListener {
     private SharedPreferences.Editor editor;
     private CheckBox remember_pass;
     private Button loginError;
+    private MyDatabaseHelper dbHelper;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
@@ -80,6 +82,7 @@ public class LogInPage extends Activity implements View.OnClickListener {
             pwdText.setText(password);
             remember_pass.setChecked(true);
         }
+        dbHelper = new MyDatabaseHelper(this,"sfa.db",null,1);
     }
 
 
@@ -155,6 +158,9 @@ public class LogInPage extends Activity implements View.OnClickListener {
                     Intent shouyeIntent =new Intent();
                     shouyeIntent.setClass(LogInPage.this,Shouye.class);
                     startActivity(shouyeIntent);
+
+                    dbHelper.getWritableDatabase();
+
                     finish();
                     editor = pref.edit();
                     if (remember_pass.isChecked()){
@@ -225,5 +231,7 @@ public class LogInPage extends Activity implements View.OnClickListener {
             }return false;
         }
     }
+
+
 
 }
