@@ -82,7 +82,7 @@ public class LogInPage extends Activity implements View.OnClickListener {
             pwdText.setText(password);
             remember_pass.setChecked(true);
         }
-        dbHelper = new MyDatabaseHelper(this,"sfa.db",null,1);
+        dbHelper = new MyDatabaseHelper(this,"sfa.db",null,2);
     }
 
 

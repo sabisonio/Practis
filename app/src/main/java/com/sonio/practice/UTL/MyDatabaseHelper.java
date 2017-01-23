@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
     public static final String CREATE_STORE="create table store(" +
-            "id integer primary key autoincreament,"+"storename text,"+"saleid int,"+"address text)";
+            "id integer primary key autoincrement,"+"storename text,"+"saleid int,"+"address text)";
 
     private Context mContext;
     public MyDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
