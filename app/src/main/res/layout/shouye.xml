@@ -45,7 +45,15 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@color/shinegreen"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             ></Button>
+
+        <Button
+            android:id="@+id/storeList"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            />
     </LinearLayout>
 </RelativeLayout>

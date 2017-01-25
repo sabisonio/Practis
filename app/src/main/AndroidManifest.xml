@@ -41,6 +41,7 @@
         <activity android:name=".Register_page"></activity>
         <activity android:name=".Shouye"></activity>
         <activity android:name=".AddNewStore"></activity>
+        <activity android:name=".StoreList"></activity>
     </application>
 
 </manifest>

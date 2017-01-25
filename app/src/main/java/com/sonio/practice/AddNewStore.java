@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.sonio.practice.UTL.MyDatabaseHelper;
 
@@ -127,8 +128,8 @@ public class AddNewStore extends Activity implements View.OnClickListener {
                 ContentValues values=new ContentValues();
                 values.put("storename",storeName.getText().toString());
                 values.put("address",provinceValue);
-                db.insert("store",null,values);
-
+                db.insert("store",null,values);/**/
+                Toast.makeText(AddNewStore.this,"哦哦",Toast.LENGTH_LONG).show();
                 break;
         }
     }
