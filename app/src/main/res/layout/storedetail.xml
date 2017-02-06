@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/iddetailframelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="店铺ID"/>
+        <TextView
+            android:text="hahahhaha"
+            android:id="@+id/iddetail"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/test"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"
+            />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/storenamedetailframelayout"
+        android:layout_below="@+id/iddetailframelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="店铺名称"/>
+    <TextView
+
+        android:text="hahahhaha"
+        android:id="@+id/storenamedetail"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/test"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
+       />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/saleiddetailframelayout"
+        android:layout_below="@+id/storenamedetailframelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="店铺所属省份"/>
+    <TextView
+
+        android:text="wowowowo"
+        android:id="@+id/saleiddetail"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/test"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/addressdetailframelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saleiddetailframelayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="店铺所在地址"/>
+    <TextView
+        android:layout_below="@+id/saleiddetail"
+        android:text="wowowowo"
+        android:id="@+id/addressdetail"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/test"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"/>
+    </FrameLayout>
+
+
+</RelativeLayout>

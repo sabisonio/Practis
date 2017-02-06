@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -8,27 +9,31 @@
 
     <TextView
         android:id="@+id/id"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:textColor="@color/shinegreen"
-        android:layout_alignParentRight="true"
+        android:textSize="25dp"
         />
+
     <TextView
         android:id="@+id/storename"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/id"
         android:textColor="@color/shinegreen"
-        />
+        android:textSize="25dp"/>
     <TextView
         android:id="@+id/saleid"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/storename"
         android:textColor="@color/shinegreen"
-        />
+        android:textSize="25dp"/>
     <TextView
         android:id="@+id/address"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/saleid"
         android:textColor="@color/shinegreen"
-        />
+        android:textSize="25dp"/>
 </LinearLayout>

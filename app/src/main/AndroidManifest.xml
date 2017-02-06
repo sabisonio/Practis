@@ -42,6 +42,7 @@
         <activity android:name=".Shouye"></activity>
         <activity android:name=".AddNewStore"></activity>
         <activity android:name=".StoreList"></activity>
+        <activity android:name=".StoreDetail"></activity>
     </application>
 
 </manifest>

@@ -92,7 +92,7 @@ public class AddNewStore extends Activity implements View.OnClickListener {
                 citySpinner.setAdapter(cityAdapter);
                 ////保留选择省级数据
                 provincePosition = position;
-                provinceValue=(String)provinceSpinner.getSelectedItem();
+                provinceValue=(String)provinceSpinner.getSelectedItem().toString();
 
             }
 

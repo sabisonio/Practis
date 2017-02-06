@@ -1,43 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+   >
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/storenameframe"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:orientation="horizontal">
         <TextView
             android:text="门店名称"
-            android:layout_width="80dp"
-            android:layout_height="50dp" />
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom"
+            />
         <EditText
             android:id="@+id/storeName"
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-    </LinearLayout>
-
-    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"
+            />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/saleframe"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <Spinner
-        android:id="@+id/spin_province"
-        android:layout_width="111dp"
-        android:layout_height="30dp"></Spinner>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/storenameframe"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="所属区域"/>
+        <Spinner
+            android:id="@+id/spin_province"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"></Spinner>
 
-    <Spinner
-        android:id="@+id/spin_city"
-        android:layout_width="111dp"
-        android:layout_height="wrap_content"></Spinner>
+        <Spinner
+            android:id="@+id/spin_city"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginStart="180dp"></Spinner>
 
-    <Spinner
-        android:id="@+id/spin_county"
-        android:layout_width="111dp"
-        android:layout_height="wrap_content"></Spinner>
-    </LinearLayout>
-<Button
-    android:id="@+id/submitNewStore"
-    android:layout_width="50dp"
-    android:layout_height="50dp" />
-</LinearLayout>
+        <Spinner
+            android:id="@+id/spin_county"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginStart="260dp"></Spinner>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/addressframe"
+        android:layout_below="@+id/saleframe"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="地址"/>
+        <EditText
+            android:id="@+id/addressedit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"/>
+    </FrameLayout>
+    <Button
+        android:id="@+id/submitNewStore"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="提交"
+        android:textSize="26px"/>
+</RelativeLayout>

@@ -153,7 +153,7 @@ public class LogInPage extends Activity implements View.OnClickListener {
                     Toast.makeText(LogInPage.this,"请输入账号密码！",Toast.LENGTH_SHORT).show();
                 }
 
-                else if (inputText.equals("123")&& pwdInputText.equals("123") && codeEditText.equals(realCode) ){
+                else if (inputText.equals("1")&& pwdInputText.equals("1") ){//&& codeEditText.equals(realCode)
                     Toast.makeText(LogInPage.this,realCode,Toast.LENGTH_SHORT).show();
                     Intent shouyeIntent =new Intent();
                     shouyeIntent.setClass(LogInPage.this,Shouye.class);
