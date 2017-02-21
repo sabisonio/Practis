@@ -56,4 +56,8 @@
             android:layout_marginLeft="30dp"
             />
     </LinearLayout>
+    <Button
+        android:id="@+id/playmusic"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 </RelativeLayout>

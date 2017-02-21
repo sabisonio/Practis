@@ -2,13 +2,14 @@
     package="com.sonio.practice">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogInPage">
+        <activity android:name=".Shouye">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
@@ -39,10 +40,11 @@
         <activity android:name=".NoNetTips"></activity>
         <activity android:name=".MainMenuPage"></activity>
         <activity android:name=".Register_page"></activity>
-        <activity android:name=".Shouye"></activity>
+
         <activity android:name=".AddNewStore"></activity>
         <activity android:name=".StoreList"></activity>
         <activity android:name=".StoreDetail"></activity>
+        <activity android:name=".PlayMusic"></activity>
     </application>
 
 </manifest>

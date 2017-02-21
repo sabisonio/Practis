@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/play"
+        android:background="@drawable/katongxiaodongwu_23"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+    <Button
+        android:id="@+id/pause"
+        android:background="@drawable/katongxiaodongwu_09"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/play"
+        ></Button>
+
+    <Button
+        android:id="@+id/stop"
+        android:background="@drawable/katongxiaodongwu_18"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/pause"
+        ></Button>
+</RelativeLayout>

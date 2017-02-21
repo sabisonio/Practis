@@ -20,6 +20,7 @@ public class Shouye extends Activity implements View.OnClickListener {
     private TextView selectedItem;
     private Button addNewStore;
     private Button storeList;
+    private Button playMusic;
     protected  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         ///动态加载布局http://blog.csdn.net/guolin_blog/article/details/12921889
@@ -37,6 +38,8 @@ public class Shouye extends Activity implements View.OnClickListener {
         addNewStore.setOnClickListener(this);
         storeList=(Button)findViewById(R.id.storeList);
         storeList.setOnClickListener(this);
+        playMusic=(Button)findViewById(R.id.playmusic);
+        playMusic.setOnClickListener(this);
 
     }
 
@@ -52,6 +55,11 @@ public class Shouye extends Activity implements View.OnClickListener {
                 Intent intentStoreList=new Intent();
                 intentStoreList.setClass(Shouye.this,StoreList.class);
                 startActivity(intentStoreList);
+                break;
+            case R.id.playmusic:
+                Intent intentPlayMusic=new Intent();
+                intentPlayMusic.setClass(Shouye.this,PlayMusic.class);
+                startActivity(intentPlayMusic);
                 break;
         }
     }

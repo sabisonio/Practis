@@ -66,6 +66,7 @@ public class StoreList extends Activity implements AdapterView.OnItemClickListen
 
     ///数据库操作类
     class SQLiteDataBaseDao{
+        //构造方法，class在new的时候就直接执行方法里面的操作
         public SQLiteDataBaseDao(){
             mDb = openOrCreateDatabase("sfa.db",SQLiteDatabase.CREATE_IF_NECESSARY,null);
             getAllData("store");
