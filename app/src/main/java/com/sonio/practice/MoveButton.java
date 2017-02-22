@@ -2,12 +2,15 @@ package com.sonio.practice;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsoluteLayout;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by admin on 2016/12/8.
@@ -20,9 +23,17 @@ public class MoveButton extends Activity {
 
     int xSpan;
     int ySpan;
+
+    private Button bok;
+    private int i = 0;
+    private TextView testtextview;
+
+
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buttonmove);
+        testtextview=(TextView)findViewById(R.id.testtextview);
+        new Thread(new ThreadShow()).start();
         Button bok=(Button)this.findViewById(R.id.moveButton);
         bok.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View view, MotionEvent event){
@@ -42,6 +53,7 @@ public class MoveButton extends Activity {
                 return true;
             }
         });
+
     }
     public boolean onKeyDown(int KeyCode, KeyEvent event){
         Button bok=(Button)this.findViewById(R.id.moveButton);
@@ -61,5 +73,31 @@ public class MoveButton extends Activity {
                 (int)event.getRawX()-xSpan-X_MODIFY,(int)event.getRawY()-ySpan-Y_MODIFY);
         bok.setLayoutParams(lp);
         return true;
+    }
+
+    //handler类
+    Handler handler = new Handler(){
+        public void handleMessage(Message msg){
+            if (msg.what==1){
+                testtextview.setText(Integer.toString(i++));
+            }
+        };
+    };
+    //线程类
+    class ThreadShow implements Runnable {
+        @Override
+        public void run(){
+            while (true){
+                try{
+                    Thread.sleep(1000);
+                    Message msg =new Message();
+                    msg.what=1;
+                    handler.sendMessage(msg);
+                }catch (Exception e){
+                    e.printStackTrace();
+                    System.out.println("thread error....");
+                }
+            }
+        }
     }
 }
